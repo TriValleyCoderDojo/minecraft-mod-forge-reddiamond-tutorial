@@ -1,5 +1,6 @@
 package reddiamond;
 
+import reddiamond.block.BlockNuke;
 import reddiamond.block.RedDiamondOre;
 import reddiamond.item.RedDiamondAxe;
 import reddiamond.item.RedDiamondHoe;
@@ -44,6 +45,10 @@ public class RedDiamondMod {
 	public static Item redDiamondHoe = new RedDiamondHoe(RedDiamondHoe.id, materialRedDiamond);
 	public static Item redDiamondAxe = new RedDiamondAxe(RedDiamondAxe.id, materialRedDiamond);
 	public static Item redDiamondWand = new RedDiamondWand(RedDiamondWand.id);
+	
+	// set the number of ticks to wait for this to go off: 20 ticks/sec, 24,000 ticks/day
+	// Note: once triggered the nuke will disappear
+	public static Block blockNuke = new BlockNuke(BlockNuke.id, 200);
 	
 	private OreManager oreManager = new OreManager();
 
@@ -91,6 +96,11 @@ public class RedDiamondMod {
 		GameRegistry.registerItem(redDiamondWand, RedDiamondWand.internalName);
 		LanguageRegistry.addName(redDiamondWand, RedDiamondWand.externalName);
 		GameRegistry.addRecipe(new ItemStack(redDiamondWand, 1), RedDiamondWand.recipe);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(redDiamondItem, 1), Block.blockDiamond, Block.blockRedstone);
+		
+		GameRegistry.registerBlock(blockNuke, BlockNuke.internalName);
+		LanguageRegistry.addName(blockNuke, BlockNuke.externalName);
 		
 	}
 

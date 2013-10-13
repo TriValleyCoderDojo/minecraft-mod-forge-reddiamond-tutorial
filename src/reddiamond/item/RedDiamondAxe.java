@@ -16,7 +16,13 @@ public class RedDiamondAxe extends ItemAxe {
 	public static String internalName = "redDiamondAxe";
 	public static String externalName = "Red Diamond Axe";
 	
-	public static Object[] recipe = {"** ", "*X ", " X ", 'X', Item.stick, '*', RedDiamondMod.redDiamondItem};
+	public static Object[] recipe = {
+		"** ", 
+		"*X ", 
+		" X ", 
+		'X', Item.stick, 
+		'*', RedDiamondMod.redDiamondItem
+	};
 
 	public RedDiamondAxe(int id, EnumToolMaterial material) {
 		super(id, material);

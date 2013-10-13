@@ -16,7 +16,13 @@ public class RedDiamondHoe extends ItemHoe {
 	public static String internalName = "redDiamondHoe";
 	public static String externalName = "Red Diamond Hoe";
 	
-	public static Object[] recipe = {"** ", " X ", " X ", 'X', Item.stick, '*', RedDiamondMod.redDiamondItem};
+	public static Object[] recipe = {
+		"** ", 
+		" X ", 
+		" X ", 
+		'X', Item.stick, 
+		'*', RedDiamondMod.redDiamondItem
+	};
 
 	public RedDiamondHoe(int id, EnumToolMaterial material) {
 		super(id, material);

@@ -10,9 +10,15 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityWitherSkull;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Vec3;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
+import net.minecraftforge.event.entity.player.ArrowNockEvent;
 
 public class RedDiamondWand extends Item {
 	
@@ -20,7 +26,13 @@ public class RedDiamondWand extends Item {
 	public static String internalName = "redDiamondWand";
 	public static String externalName = "Red Diamond Wand";
 	
-	public static Object[] recipe = {"*  ", " X ", "  X", 'X', Item.stick, '*', RedDiamondMod.redDiamondItem};
+	public static Object[] recipe = {
+		"*  ", 
+		" X ", 
+		"  X", 
+		'X', Item.stick, 
+		'*', RedDiamondMod.redDiamondItem
+	};
 
 	public RedDiamondWand(int id) {
 		super(id);
@@ -45,6 +57,24 @@ public class RedDiamondWand extends Item {
 			}
 		}
 		return false;
+	}
+	
+	@Override
+	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer) {
+		itemstack.damageItem(10, entityplayer);
+		if (!world.isRemote) {
+			Vec3 look = entityplayer.getLookVec();
+			EntityWitherSkull witherSkull = new EntityWitherSkull(world, entityplayer, 1, 1, 1);
+			witherSkull.setPosition(
+					entityplayer.posX + look.xCoord * 5,
+					entityplayer.posY + look.yCoord * 5,
+					entityplayer.posZ + look.zCoord * 5);
+			witherSkull.accelerationX = look.xCoord * 0.1;
+			witherSkull.accelerationY = look.yCoord * 0.1;
+			witherSkull.accelerationZ = look.zCoord * 0.1;
+			world.spawnEntityInWorld(witherSkull);
+		}
+		return itemstack;
 	}
 	
 	@Override

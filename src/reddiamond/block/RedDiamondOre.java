@@ -15,7 +15,7 @@ import net.minecraft.util.Icon;
 
 public class RedDiamondOre extends Block {
 	
-	public static int id = 600;
+	public static int id = 3000;
 	public static String internalName = "redDiamondOre";
 	public static String externalName = "Red Diamond Ore";
 	

@@ -16,7 +16,13 @@ public class RedDiamondPickaxe extends ItemPickaxe {
 	public static String internalName = "redDiamondPickaxe";
 	public static String externalName = "Red Diamond Pickaxe";
 	
-	public static Object[] recipe = {"***", " X ", " X ", 'X', Item.stick, '*', RedDiamondMod.redDiamondItem};
+	public static Object[] recipe = {
+		"***", 
+		" X ", 
+		" X ", 
+		'X', Item.stick, 
+		'*', RedDiamondMod.redDiamondItem
+	};
 
 	public RedDiamondPickaxe(int id, EnumToolMaterial material) {
 		super(id, material);

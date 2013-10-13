@@ -16,7 +16,13 @@ public class RedDiamondShovel extends ItemSpade {
 	public static String internalName = "redDiamondShovel";
 	public static String externalName = "Red Diamond Shovel";
 	
-	public static Object[] recipe = {" * ", " X ", " X ", 'X', Item.stick, '*', RedDiamondMod.redDiamondItem};
+	public static Object[] recipe = {
+		" * ", 
+		" X ", 
+		" X ", 
+		'X', Item.stick, 
+		'*', RedDiamondMod.redDiamondItem
+	};
 
 	public RedDiamondShovel(int id, EnumToolMaterial material) {
 		super(id, material);

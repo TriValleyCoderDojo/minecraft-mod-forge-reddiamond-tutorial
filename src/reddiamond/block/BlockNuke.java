@@ -110,7 +110,8 @@ public class BlockNuke extends Block {
         if (!par1World.isRemote) {
             if ((par5 & 1) == 1) {
                 NukePrimed nukePrimed = new NukePrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), par6EntityLivingBase);
-                par1World.spawnEntityInWorld(nukePrimed);
+                nukePrimed.setFuse(fuse);
+				par1World.spawnEntityInWorld(nukePrimed);
                 par1World.playSoundAtEntity(nukePrimed, "random.fuse", 1.0F, 1.0F);
             }
         }

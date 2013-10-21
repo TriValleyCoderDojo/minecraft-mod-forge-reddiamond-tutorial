@@ -9,5 +9,7 @@ smelting & crafting recipes that use the Red Diamond, and creating a set of
 Red Diamond Tools.  It will also cover creating textures, both single and 
 multi-textures.  
 
-In addition, there is a supporting article at http://www.lopakalogic.com 
-to provide additional information.  
+In addition, there is a supporting article with additional information at 
+
+http://www.lopakalogic.com/articles/minecraft-articles/minecraft-mods-forge/ 
+ 
